@@ -31,7 +31,7 @@ $(function () {
             var bsdFormId = $(this).attr("data-bsd-form-id");
 
             if (bsdFormId) {
-                //submitBsdForm(bsdFormId);
+                submitBsdForm(bsdFormId);
             }
 
             /* move to next slide */
@@ -84,6 +84,10 @@ $(function () {
         var packType = $(this).attr("data-value");
         $('#details #packType').val(packType);
 
+        if (packType == 'post') {
+            $('#first_line, #post_town').attr('required', true);
+        }
+
     });
 
     /* Fill out Hidden Emails */
@@ -126,14 +130,13 @@ function validateForm(form) {
     }).length;
 
     /* check email format */
-    var email = $('#pledge form').find('input[type="email"]').val();
+    var email = $('#details form').find('input[type="email"]').val();
     if (email) {
         if (isValidEmailAddress(email)) {
         } else {
             return false;
         }
     }
-
 
     /* validation response  */
     if (len) {

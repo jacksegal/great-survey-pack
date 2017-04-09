@@ -162,7 +162,7 @@
                         <div class="radio">
                             <label>
                                 <input type="radio" name="101" id="pack1"
-                                       value="By post" data-href="#who-with" data-value="post" data-choice="host"
+                                       value="By post" data-href="#who-with" data-value="post" data-choice="post"
                                        checked>
                                 By post
                             </label>
@@ -170,7 +170,8 @@
                         <div class="radio">
                             <label>
                                 <input type="radio" name="101" id="pack2"
-                                       value="By email" data-href="#who-with" data-value="digital" data-choice="host">
+                                       value="By email" data-href="#who-with" data-value="digital"
+                                       data-choice="digital">
                                 By email
                             </label>
                         </div>
@@ -199,7 +200,7 @@
 <!-- ************** -->
 
 
-<section id="details" class="slide details-appeals-section">
+<section id="details" class="slide details-appeals-section hidden">
     <div class="container-fluid banner text-center">
         <div class="row">
             <div class="col-md-12">
@@ -211,7 +212,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <h1>DETAILS</h1>
+                <h1>SIGNUP</h1>
             </div>
         </div>
 
@@ -222,7 +223,11 @@
                     happening.
                 </p>
 
-                <p data-selection="host" class="">
+                <p data-selection="digital" class="hidden">
+                    Great. Just give us your details and one will wing its way to you.
+                </p>
+
+                <p data-selection="post" class="">
                     Great. Just give us your details and one will wing its way to you.
                 </p>
             </div>
@@ -240,36 +245,43 @@
                                placeholder="Last Name *"
                                required>
                     </div>
+
                     <div class="form-group">
                         <input type="email" class="form-control" name="294" id="inputEmail"
                                placeholder="Email *" required>
                     </div>
+
+                    <!--<div class="form-group">
+                        <input type="tel" class="form-control" name="305" id="inputPhone"
+                               placeholder="Phone">
+                    </div>-->
+
                     <div class="form-group">
-                        <input type="text" class="form-control hidden" name="303" id="inputPostcode"
-                               placeholder="Postcode *" data-selection="just-attend" required>
+                        <input type="text" class="form-control" name="303" id="inputPostcode"
+                               placeholder="Postcode *">
                     </div>
 
                     <!-- Postcode Lookup -->
-                    <div id="lookup_field" class="" data-selection="host"></div>
+                    <div id="lookup_field" class="" data-selection="post"></div>
 
                     <div class="form-group">
                         <input type="text" class="form-control lookupFields addressLine" id="first_line"
-                               placeholder="Address Line 1">
+                               placeholder="Address Line 1 *"
+                               data-selection="post" class="hidden">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control lookupFields addressLine" id="second_line"
-                               placeholder="Address Line 2">
+                               placeholder="Address Line 2"
+                               data-selection="post" class="hidden">
                     </div>
 
+                    <!-- Concat Address Lines 1 & 2 into one field -->
                     <input id="addressLines" type="hidden" name="300" value="">
 
                     <div class="form-group">
                         <input type="text" class="form-control lookupFields" name="302" id="post_town"
-                               placeholder="Town">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control lookupFields" name="303" id="postcode"
-                               placeholder="Postcode">
+                               placeholder="Town *"
+                               data-selection="post" class="hidden">
                     </div>
                     <!-- // Postcode Lookup -->
 
@@ -302,7 +314,7 @@
                         and Privacy Policy. Data privacy
                     </p>
                     <input id="unsub" type="hidden" value="" name="">
-                    <input id="packType" type="hidden" value="post" name="111">
+                    <input id="packType" type="hidden" value="post" name="359">
 
                     <button type="submit" data-href="#who-with" class="btn-lg btn btn-next">NEXT</button>
                 </form>
@@ -315,7 +327,7 @@
 <!-- Slide: Who with? -->
 <!-- **************** -->
 
-<section id="who-with" class="slide who-with">
+<section id="who-with" class="slide who-with hidden">
 
     <div class="container-fluid banner text-center">
         <div class="row">
@@ -328,7 +340,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
 
-                <p>
+                <p style="padding-top: 25px">
                     Thanks so much. Just a few more things while you’re here!
                 </p>
 
@@ -336,54 +348,54 @@
                     Who would you most like to have a get together with? Letting us know will mean we can give you
                     better support setting up your event.
                 </p>
-                <form data-bsd-form-id="9">
-                    <input type="hidden" data-email="true" value="" name="118">
+                <form data-bsd-form-id="21">
+                    <input type="hidden" data-email="true" value="" name="312">
                     <div class="form-group text-left">
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#share-main" name="150" id="whoWithRadio1"
+                                <input type="radio" data-href="#share-main" name="326" id="whoWithRadio1"
                                        value="My neighbours" checked>
                                 My neighbours
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
+                                <input type="radio" data-href="#other-closest" name="326"
                                        id="whoWithRadio2" value="Friends in the local area">
                                 Friends in the local area
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
+                                <input type="radio" data-href="#other-closest" name="326"
                                        id="whoWithRadio3" value="My school">
                                 My school
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
+                                <input type="radio" data-href="#other-closest" name="326"
                                        id="whoWithRadio4" value="My faith group">
                                 My faith group
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
+                                <input type="radio" data-href="#other-closest" name="326"
                                        id="whoWithRadio5" value="My sports club">
                                 My sports club
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
+                                <input type="radio" data-href="#other-closest" name="326"
                                        id="whoWithRadio6" value="My colleagues">
                                 My colleagues
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
+                                <input type="radio" data-href="#other-closest" name="326"
                                        id="whoWithRadio7" value="Other">
                                 Other
                             </label>
@@ -403,7 +415,7 @@
 <!-- ***************** -->
 
 
-<section id="what-type" class="slide what-type-section text-center">
+<section id="what-type" class="slide what-type-section text-center hidden">
     <div class="container-fluid banner">
         <div class="row">
             <div class="col-md-12">
@@ -414,58 +426,60 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <p>
+                <p style="padding-top: 25px">
                     Thanks! And what type of get together appeals to you most? Letting us know will help us support you
                     better.
                 </p>
-                <form data-bsd-form-id="10">
-                    <input type="hidden" data-email="true" value="" name="134">
+                <form data-bsd-form-id="22">
+                    <input type="hidden" data-email="true" value="" name="328">
                     <div class="form-group text-left">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="149" id="whatTypeRadio1"
-                                       value="Throwing a street party"
+                                <input type="radio" name="342" id="whatTypeRadio1"
+                                       value="Throw a street party"
                                        checked>
-                                Throwing a street party
+                                Throw a street party
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="149" id="whatTypeRadio2"
-                                       value="Hosting a coffee morning or an afternoon tea"
-                                       checked>
-                                Hosting a coffee morning or an afternoon tea
+                                <input type="radio" name="342" id="whatTypeRadio2"
+                                       value="Host an afternoon tea or a BBQ">
+                                Host an afternoon tea or a BBQ
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="149" id="whatTypeRadio3"
-                                       value="Holding a Big Lunch or a BBQ"
-                                       checked>
-                                Holding a Big Lunch or a BBQ
+                                <input type="radio" name="342" id="whatTypeRadio3"
+                                       value="Hold a Big Lunch">
+                                Hold a Big Lunch
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="149" id="whatTypeRadio4"
-                                       value="Organising something sporty - like a game of football or rounders"
-                                       checked>
-                                Organising something sporty - like a game of football or rounders
+                                <input type="radio" name="342" id="whatTypeRadio4"
+                                       value="Organise something sporty - like a game of football or rounders">
+                                Organise something sporty - like a game of football or rounders
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="149" id="whatTypeRadio5"
-                                       value="Baking for my neighbours"
-                                       checked>
-                                Baking for my neighbours
+                                <input type="radio" name="342" id="whatTypeRadio5"
+                                       value="Go for a run or walk in my local park">
+                                Go for a run or walk in my local park
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="149" id="whatTypeRadio6"
-                                       value="Something else"
-                                       checked>
+                                <input type="radio" name="342" id="whatTypeRadio6"
+                                       value="Bake for my neighbours">
+                                Bake for my neighbours
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="342" id="whatTypeRadio7"
+                                       value="Something else">
                                 Something else
                             </label>
                         </div>
@@ -482,7 +496,7 @@
 <!-- Slide: Just Attend - What?  -->
 <!-- *************************** -->
 
-<section id="attend-what-type" class="attend-what-type">
+<section id="attend-what-type" class="slide attend-what-type hidden">
 
     <div class="container-fluid banner text-center">
         <div class="row">
@@ -495,61 +509,64 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
 
-                <p>
+                <p style="padding-top: 25px">
                     There will be lots going on, letting us know what you’re interested in will help us keep you up to
-                    date. What might you want to go to?
+                    date.
                 </p>
-                <form data-bsd-form-id="9">
-                    <input type="hidden" data-email="true" value="" name="118">
+                <p>
+                    What might you want to go to?
+                </p>
+                <form data-bsd-form-id="23">
+                    <input type="hidden" data-email="true" value="" name="343">
                     <div class="form-group text-left">
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#share-main" name="150" id="attendWhatTypeRadio1"
+                                <input type="radio" data-href="#share-main" name="357" id="attendWhatTypeRadio1"
                                        value="a street party" checked>
-                                a street party
+                                A street party
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
+                                <input type="radio" data-href="#other-closest" name="357"
                                        id="attendWhatTypeRadio2" value="a big event held near me">
-                                a big event held near me
+                                A big event held near me
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
+                                <input type="radio" data-href="#other-closest" name="357"
                                        id="attendWhatTypeRadio3" value="an afternoon tea or a BBQ">
-                                an afternoon tea or a BBQ
+                                An afternoon tea or a BBQ
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
+                                <input type="radio" data-href="#other-closest" name="357"
                                        id="attendWhatTypeRadio4"
                                        value="something sporty - like a game of football or rounders">
-                                something sporty - like a game of football or rounders
+                                Something sporty - like a game of football or rounders
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
+                                <input type="radio" data-href="#other-closest" name="357"
                                        id="attendWhatTypeRadio5" value="a run or a walk in my local park">
-                                a run or a walk in my local park
+                                A run or a walk in my local park
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
+                                <input type="radio" data-href="#other-closest" name="357"
                                        id="attendWhatTypeRadio6" value="something else">
-                                something else
+                                Something else
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" data-href="#other-closest" name="150"
-                                       id="attendWhatTypeRadio7" value="don’t know">
-                                don’t know
+                                <input type="radio" data-href="#other-closest" name="357"
+                                       id="attendWhatTypeRadio7" value="dont know">
+                                Don’t know
                             </label>
                         </div>
                     </div>
@@ -567,7 +584,7 @@
 <!-- ************* -->
 
 
-<section id="share-main" class="slide share-main-section">
+<section id="share-main" class="slide share-main-section hidden">
     <div class="container-fluid banner">
         <div class="row">
             <div class="col-md-12">
@@ -729,17 +746,18 @@
                 $('#idpc_dropdown').focus();
                 if (data.code === 2000) {
                     // Success
-                    console.log(data);
+                    //console.log(data);
                 } else if (data.code === 4040) {
                     // Postcode does not exist
                     console.log(data);
                 } else {
                     // Some other error
-                    console.log("some other error");
+                    console.log("postcode lookup: some other error");
                 }
             },
+            input: '#inputPostcode',
             button_class: 'btn btn-primary',
-            input_class: 'form-control',
+            //input_class: 'form-control',
             dropdown_class: 'form-control',
             error_message_not_found: 'Your postcode could not be found. Please enter it manually:'
         });
