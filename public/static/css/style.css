@@ -1,0 +1,239 @@
+.fa-4 {
+    font-size: 7em !important;
+}
+
+.share-main-section ul {
+    list-style-type: none;
+}
+
+form, .fakeForm {
+    padding-bottom: 60px;
+}
+
+@font-face {
+    font-family: GillSans;
+    src: url('/static/fonts/GillSans.ttc');
+}
+
+@font-face {
+    font-family: GillSansShadowMTPro;
+    src: url('/static/fonts/GillSansShadowMTPro.otf');
+}
+
+body {
+    font-family: GillSans;
+}
+
+h1 {
+    font-family: GillSansShadowMTPro;
+}
+
+.h1, h1 {
+    font-size: 44px;
+}
+
+p {
+    font-size: 26px;
+}
+
+label {
+    font-size: 18px;
+}
+
+.form-control {
+    font-size: 20px;
+}
+
+.socialWrapper {
+    margin-bottom: 50px;
+}
+
+.fa-twitter-square {
+    color: #1DA1F2;
+    margin-right: 10px;
+}
+
+.fa-facebook-square {
+    color: #4867AA;
+    margin-left: 10px;
+}
+
+footer {
+    padding: 10px;
+    background-color: #F05A54;
+    color: white;
+}
+
+.footer p {
+    font-size: 17px;
+    font-family: 'Lato', sans-serif;
+}
+
+footer a, footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer .footerTitle {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+}
+
+.visibilityHidden {
+    visibility: hidden;
+}
+
+.logo {
+    padding: 10px;
+}
+
+.banner {
+    background-color: #F05A54;
+    background-image: url('/static/img/banner-background-small.png');
+    /*margin-bottom: 25px;*/
+    border-bottom: 1px solid #FF3137;
+}
+
+#share-main .container h1 {
+    margin: 35px 0;
+}
+
+#share-main .footerBanner {
+    margin: 0;
+}
+
+.banner img {
+    max-width: 100%;
+}
+
+.privacyCheckbox label, .privacyCheckbox {
+    font-size: 12px;
+}
+
+#pledge img {
+    /*padding: 20px;*/
+}
+
+a.socialIcons { /* or whatever your class */
+    text-decoration: none;
+}
+
+#pledge .form-control {
+    height: 50px;
+}
+
+#get-involved {
+    padding-top: 4em;
+}
+
+/* taken from main page: */
+
+.nav-bar {
+    font-family: 'Lato', sans-serif;
+}
+
+.nav-bar p {
+    font-size: 17px;
+}
+
+/* nav bar */
+.nav-bar {
+    text-align: center;
+    padding: 0.9em;
+    background: rgb(235, 235, 235);
+    height: 54px;
+}
+
+.nav-bar.red {
+    background: red;
+    padding: 1.3em;
+    height: 65px;
+}
+
+.nav-bar .nav-links {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.nav-bar .nav-links a {
+    text-decoration: none;
+    font-weight: bold;
+    margin: 2em;
+    font-size: 20px;
+    color: black;
+}
+
+.nav-bar.red .nav-links a {
+    color: white;
+}
+
+@media (max-width: 720px) {
+    .nav-bar {
+        height: 48px;
+    }
+
+    .nav-bar .nav-links {
+        width: 100%;
+    }
+
+    .nav-bar .nav-links a {
+        margin: 0.6em;
+        font-size: 18px;
+    }
+}
+
+/* header */
+.header, .whose-on-board, .social-media {
+    width: 100%;
+    background: url('/static/img/tile.png');
+}
+
+.header .header-image {
+    padding: 2em;
+}
+
+.header .header-image .img-responsive {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* footer */
+.footer {
+    width: 100%;
+    padding: 3em 0em;
+    background: rgb(73, 73, 72);
+    color: white;
+    text-align: center;
+}
+
+.footer img {
+    margin-bottom: 1.5em;
+}
+
+/* ideal postcode lookup */
+#idpc_button {
+    margin: 15px;
+}
+
+.lookupFields {
+    display: none;
+}
+
+#lookup_field {
+    margin-bottom: 15px;
+}
+
+#idpc_error_message {
+    font-size: 20px;
+}
+
+.smallerText {
+    font-size: 20px;
+}
