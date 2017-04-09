@@ -229,47 +229,46 @@
         </div>
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <form>
+                <form data-bsd-form-id="20">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="89" id="inputFirstName"
-                               placeholder="First Name *" value="John"
+                        <input type="text" class="form-control" name="296" id="inputFirstName"
+                               placeholder="First Name *"
                                required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="02" id="inputLastName"
-                               placeholder="Last Name *" value="Doe"
+                        <input type="text" class="form-control" name="298" id="inputLastName"
+                               placeholder="Last Name *"
                                required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" name="87" id="inputEmail"
-                               placeholder="Email *" value="john.doe@test.com" required>
+                        <input type="email" class="form-control" name="294" id="inputEmail"
+                               placeholder="Email *" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control hidden" name="87" id="inputPostcode"
-                               placeholder="Postcode *" value="N16 0RS" data-selection="just-attend" required>
+                        <input type="text" class="form-control hidden" name="303" id="inputPostcode"
+                               placeholder="Postcode *" data-selection="just-attend" required>
                     </div>
 
                     <!-- Postcode Lookup -->
                     <div id="lookup_field" class="" data-selection="host"></div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control lookupFields" name="1" id="first_line"
+                        <input type="text" class="form-control lookupFields addressLine" id="first_line"
                                placeholder="Address Line 1">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control lookupFields" name="2" id="second_line"
+                        <input type="text" class="form-control lookupFields addressLine" id="second_line"
                                placeholder="Address Line 2">
                     </div>
+
+                    <input id="addressLines" type="hidden" name="300" value="">
+
                     <div class="form-group">
-                        <input type="text" class="form-control lookupFields" name="3" id="third_line"
-                               placeholder="Address Line 3">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control lookupFields" name="4" id="post_town"
+                        <input type="text" class="form-control lookupFields" name="302" id="post_town"
                                placeholder="Town">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control lookupFields" name="5" id="postcode"
+                        <input type="text" class="form-control lookupFields" name="303" id="postcode"
                                placeholder="Postcode">
                     </div>
                     <!-- // Postcode Lookup -->
@@ -672,7 +671,7 @@
 <script src="/static/js/ideal-postcodes-2.2.0.min.js?qdwqasdad"></script>
 
 <!-- App Code -->
-<script src="/static/js/app.js?3hiwd6"></script>
+<script src="/static/js/app.js?4hiwd7"></script>
 
 <!-- AddRoll -->
 <script type="text/javascript">
@@ -715,9 +714,13 @@
             output_fields: {
                 line_1: '#first_line',
                 line_2: '#second_line',
-                line_3: '#third_line',
                 post_town: '#post_town',
                 postcode: '#postcode'
+            },
+            onAddressSelected: function (data) {
+                var address1 = $('#details #first_line').val();
+                var address2 = $('#details #second_line').val();
+                $('#details #addressLines').val(address1 + ', ' + address2);
             },
             onSearchCompleted: function (data) {
                 var postcode = $('#idpc_input').val();

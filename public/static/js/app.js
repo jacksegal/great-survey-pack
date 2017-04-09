@@ -86,51 +86,19 @@ $(function () {
 
     });
 
-
     /* Fill out Hidden Emails */
     $("#details form").submit(function (event) {
         var email = $("#inputEmail").val();
         $('input[data-email="true"]').val(email);
     });
 
-    /* Get Next Slide based on chosen Activity */
-    $('#activity-appeals input:radio').change(function () {
-        var target = $(this).attr("data-href");
-        $('#activity-appeals button[type="submit"]').attr("data-href", target);
-    });
+    /* Concat address lines to one input */
+    $('#details input.addressLine').change(function () {
+        var address1 = $('#details #first_line').val();
+        var address2 = $('#details #second_line').val();
 
-    /* Get Next Slide based on if you have Idea */
-    $('#other-something input:radio').change(function () {
-        var target = $(this).attr("data-href");
-        $('#other-something button[type="submit"]').attr("data-href", target);
+        $('#details #addressLines').val(address1 + ', ' + address2);
     });
-
-    /* Get Share Text based on Activity */
-    $("#activity-appeals form").submit(function () {
-        var activity = $('#activity-appeals form [type="radio"]:checked').val();
-        $('#share-main [data-option="' + activity + '"]').removeClass('hidden');
-    });
-
-    /* Get Share Text for Own Idea */
-    $('#other-something form').submit(function () {
-        var answer = $('#other-something form input:checked').val();
-        if (answer == 'Yes; free text field') {
-            $('#share-main [data-option="all"]').addClass('hidden');
-            $('#share-main [data-option="ownIdea"]').removeClass('hidden');
-        }
-    });
-
-    /* Get Share Text for Just Attend */
-    $('#other-closest form').submit(function () {
-        var answer = $('#other-closest form input:checked').val();
-        if (answer == "I’d like to attend something; not organise it") {
-            $('#share-main [data-option="all"]').addClass('hidden');
-        } else {
-            $('#share-main [data-option="all"]').addClass('hidden');
-            $('#share-main [data-option="closeIdea"]').removeClass('hidden');
-        }
-    });
-
 });
 
 
