@@ -63,7 +63,6 @@ $(function () {
     });
 });
 
-
 /* Handle Custom Submits */
 $(function () {
 
@@ -165,3 +164,48 @@ function formatPostcode(postcode) {
         return postcode;
     }
 }
+
+/* Do Signup Counter */
+$(function () {
+    var signupCount = 4225;
+
+    $.ajax({
+        type: "GET",
+        url: 'https://secure.jocoxfoundation.org/utils/cons_counter/signup_counter.ajax.php?signup_form_id=20',
+        dataType: "json",
+        success: function (response) {
+
+            signupCount += response;
+            $.ajax({
+                type: "GET",
+                url: 'https://secure.jocoxfoundation.org/utils/cons_counter/signup_counter.ajax.php?signup_form_id=7',
+                dataType: "json",
+                success: function (response) {
+                    signupCount += response;
+                    $('span#signupCount').text(signupCount);
+                    $('span#signupCount').each(function () {
+                        $(this).prop('Counter', 0).animate({
+                            Counter: $(this).text()
+                        }, {
+                            duration: 2000,
+                            easing: 'swing',
+                            step: function (now) {
+                                $(this).text(Math.ceil(now));
+                            },
+                            complete: function () {
+                                $('span#signupCount').text(numberWithCommas(signupCount));
+                            }
+                        });
+                    });
+
+
+                }
+            });
+
+        }
+    });
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+});
