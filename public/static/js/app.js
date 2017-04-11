@@ -32,6 +32,7 @@ $(function () {
 
             if (bsdFormId) {
                 submitBsdForm(bsdFormId);
+                fbq('track', 'CompleteRegistration');
             }
 
             /* move to next slide */
