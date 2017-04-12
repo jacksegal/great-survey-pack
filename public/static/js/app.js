@@ -101,7 +101,7 @@ $(function () {
         var address1 = $('#details #first_line').val();
         var address2 = $('#details #second_line').val();
 
-        $('#details #addressLines').val(address1 + ', ' + address2);
+        $('#details #addressLines').val(address1.replace(/&/g, 'and') + ', ' + address2.replace(/&/g, 'and'));
     });
 });
 
