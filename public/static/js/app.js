@@ -35,11 +35,15 @@ $(function () {
                 fbq('track', 'CompleteRegistration');
             }
 
+            $("#formErrorAlert ul").empty();
+
             /* move to next slide */
             var that = $(this);
             $(this).trigger("slide:submit", that);
 
         } else {
+
+            $("#formErrorAlert ul").empty();
 
             $(this).find('input[type="email"]').filter(function () {
                 return !isValidEmailAddress(this.value);
@@ -48,6 +52,18 @@ $(function () {
                 $("#formErrorAlert ul").append('<li>Please enter a valid email address</li>');
                 $("#formErrorAlert").removeClass('hidden');
             });
+
+            var postcode = $(this).find('#inputPostcode').val();
+            if (postcode) {
+                var re = new RegExp(/^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g);
+                if (re.test(formatPostcode(postcode))) {
+
+                } else {
+                    $("#formErrorAlert ul").append('<li>Please enter a valid UK postcode</li>');
+                    $("#formErrorAlert").removeClass('hidden');
+                    $('#inputPostcode').closest('div.form-group').addClass('has-error');
+                }
+            }
 
             /* Custom Validation Errors - highlight input(s) */
             $(this).find('input[required]').filter(function () {
@@ -133,6 +149,16 @@ function validateForm(form) {
     var email = $('#details form').find('input[type="email"]').val();
     if (email) {
         if (isValidEmailAddress(email)) {
+        } else {
+            return false;
+        }
+    }
+
+    var postcode = $(form).find('#inputPostcode').val();
+    if (postcode) {
+        var re = new RegExp(/^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g);
+        if (re.test(formatPostcode(postcode))) {
+
         } else {
             return false;
         }
