@@ -193,7 +193,7 @@ function formatPostcode(postcode) {
 
 /* Do Signup Counter */
 $(function () {
-    var signupCount = 4225;
+    var signupCount = (4225 + 5391);
 
     $.ajax({
         type: "GET",
