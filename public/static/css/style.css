@@ -268,3 +268,10 @@ p {
 .header {
     border: solid 1px #EA504E;
 }
+
+.signers {
+    color: #C54240;
+    font-size: 16px;
+    margin: 0;
+    margin-below: 2px;
+}

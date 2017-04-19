@@ -191,6 +191,24 @@ function formatPostcode(postcode) {
     }
 }
 
+/* Add signs */
+$(function () {
+
+    $("#signedOne").text(signups[Math.floor(Math.random() * signups.length)]);
+    $("#signedTwo").text(signups[Math.floor(Math.random() * signups.length)]);
+    $("#signedThree").text(signups[Math.floor(Math.random() * signups.length)]);
+
+    setTimeout(function () {
+        $("p.signers").first().fadeIn("slow", function showNext() {
+            var that = this;
+            setTimeout(function () {
+                $(that).next("p.signers").fadeIn("slow", showNext);
+            }, 2000);
+
+        });
+    }, 1500);
+});
+
 /* Do Signup Counter */
 $(function () {
     var signupCount = (4225 + 5391);

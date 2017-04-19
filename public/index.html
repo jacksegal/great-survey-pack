@@ -169,7 +169,7 @@
         </div>
 
         <div class="row" style="margin-top: 25px;">
-            <div class="col-md-6 col-md-offset-2 text-left">
+            <div class="col-md-5 col-md-offset-2 text-left">
                 <p>
                     How would you like your pack?
                 </p>
@@ -208,12 +208,28 @@
                 </form>
             </div>
 
-            <div class="col-md-2">
-                <div style="background-color: #F0F0F0; height: 150px; padding: 20px; margin-bottom: 40px;">
+            <div class="col-md-3">
+                <div style="background-color: #F0F0F0; padding: 20px; margin-bottom: 5px;">
                     <span id="signupCount" style="color: #c54240; font-size: 45px;">5,881</span><br>
                     <span>get togethers</span>
                     <span>already planned</span>
                 </div>
+
+                <div style="background-color: #F0F0F0; height: 100px; padding: 20px; margin-bottom: 40px;">
+                    <p class="signers" style="display: none">
+                        <span id="signedOne">Jane</span> just got involved
+                    </p>
+                    <p class="signers" style="display: none">
+                        <span id="signedTwo">Paul</span> just got involved
+                    </p>
+                    <p class="signers" style="display: none">
+                        <span id="signedThree">Heather</span> just got involved
+                    </p>
+                </div>
+
+                <script>
+
+                </script>
             </div>
         </div>
     </div>
@@ -617,15 +633,33 @@
                 <h1>SHARE THE LOVE</h1>
 
                 <p>
-                    Brilliant - thanks so much.
+                    Thanks so much for ordering a pack - we'll get it sent out right away
                 </p>
 
                 <p>
-                    Right, one more step. The more people involved the better. Can you share with your friends and
-                    family?
+                    One more favour! The more people involved the better. Can you share with your friends and family?
                 </p>
 
-                <div class="socialWrapper">
+                <p style="margin-top:20px;">
+                    <a class="btn btn-fb btn-lg"
+                       href="https://www.facebook.com/share.php?u=https://www.greatgettogether.org" role="button"><i
+                            class="fa fa-facebook"
+                            aria-hidden="true"
+                            style="margin-right: 10px;"></i>
+                        SHARE ON FACEBOOK</a>
+                </p>
+
+                <p>
+                    <a class="btn btn-tw btn-lg"
+                       href="https://twitter.com/intent/tweet?text=Fed%20up%20of%20talking%20about%20what%20divides%20us%3F%20Join%20me%20%26%20be%20part%20of%20the%20%23GreatGetTogether%20this%20June%20in%20memory%20of%20Jo%20Cox%20https%3A%2F%2Fwww.greatgettogether.org"
+                       role="button"><i class="fa fa-twitter"
+                                        aria-hidden="true"
+                                        style="margin-right: 10px;"></i>
+                        SHARE ON TWITTER</a>
+                </p>
+
+
+                <!--<div class="socialWrapper">
                     <a target="_blank" class="socialIcons"
                        href="https://twitter.com/intent/tweet?text=Fed%20up%20of%20talking%20about%20what%20divides%20us%3F%20Join%20me%20%26%20be%20part%20of%20the%20%23GreatGetTogether%20this%20June%20in%20memory%20of%20Jo%20Cox%20https%3A%2F%2Fwww.greatgettogether.org">
                         <i class="fa fa-twitter-square fa-4" aria-hidden="true"></i>
@@ -635,7 +669,7 @@
                        target="_blank">
                         <i class="fa fa-facebook-square fa-4" aria-hidden="true"></i>
                     </a>
-                </div>
+                </div>-->
 
             </div>
         </div>
@@ -704,6 +738,9 @@
 
 <!-- Postcode Lookup -->
 <script src="/static/js/ideal-postcodes-2.2.0.min.js?qdwqasdad"></script>
+
+<!-- Signups -->
+<script src="/static/js/signups.js?ru9fj"></script>
 
 <!-- App Code -->
 <script src="/static/js/app.js?rd9ej8wk"></script>
