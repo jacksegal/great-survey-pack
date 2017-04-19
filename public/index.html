@@ -622,20 +622,14 @@
     <div class="container-fluid banner">
         <div class="row">
             <div class="col-md-12">
-                <img src="/static/img/banner-share.png">
+                <img src="/static/img/banner-appeal.png">
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-left">
-
                 <h1>SHARE THE LOVE</h1>
-
-                <p>
-                    Thanks so much for ordering a pack - we'll get it sent out right away
-                </p>
-
                 <p>
                     One more favour! The more people involved the better. Can you share with your friends and family?
                 </p>
@@ -649,7 +643,7 @@
                         SHARE ON FACEBOOK</a>
                 </p>
 
-                <p>
+                <p style="margin-bottom: 60px;">
                     <a class="btn btn-tw btn-lg"
                        href="https://twitter.com/intent/tweet?text=Fed%20up%20of%20talking%20about%20what%20divides%20us%3F%20Join%20me%20%26%20be%20part%20of%20the%20%23GreatGetTogether%20this%20June%20in%20memory%20of%20Jo%20Cox%20https%3A%2F%2Fwww.greatgettogether.org"
                        role="button"><i class="fa fa-twitter"
@@ -657,6 +651,15 @@
                                         style="margin-right: 10px;"></i>
                         SHARE ON TWITTER</a>
                 </p>
+
+                <!-- Faking form for slide -->
+                <form>
+                    <input type="hidden" name="fake" value="fake">
+
+                    <button type="submit" data-href="#share-main-two" class="btn-lg btn btn-next">NEXT</button>
+                    <button type="submit" data-href="#share-main-two" class="btn-lg btn btn-next">SKIP</button>
+                    <!--<button type="submit" data-href="#share-main-two" class="btn-lg btn btn-next">SKIP</button>-->
+                </form>
 
 
                 <!--<div class="socialWrapper">
@@ -674,7 +677,44 @@
             </div>
         </div>
     </div>
+</section>
 
+
+<section id="share-main-two" class="slide share-main-two-section hidden">
+    <div class="container-fluid banner">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="/static/img/banner-share.png">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-left">
+                <h1>THANK YOU</h1>
+
+                <p data-selection="just-attend" class="hidden">
+                    Thanks for getting involved! Why not check out our online resources for a dose of inspiration. There
+                    are hints, tips and stuff you can download and print for the weekend itself.
+                </p>
+
+                <p data-selection="digital" class="hidden">
+                    Great - now head over to check out the digital pack. You'll find lots of inspiration top tips and
+                    stuff you can download to print out for the weekend itself.
+                </p>
+
+                <p data-selection="post" class="">
+                    Thanks - your pack should be on it's way in post to you soon! In the meantime, you can find lots of
+                    inspiration online in our resources. There are hints, tips and stuff you can download and print out
+                    for the weekend itself.
+                </p>
+
+                <a role="button" href="https://greatgettogether.org/digital-pack" class="btn-lg btn btn-next">DIGITAL
+                    PACK</a>
+                <p style="margin-bottom: 100px;"></p>
+            </div>
+        </div>
+    </div>
 
     <!-- ****** -->
     <!-- Footer -->

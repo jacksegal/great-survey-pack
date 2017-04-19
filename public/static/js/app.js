@@ -87,6 +87,7 @@ $(function () {
 
         /* hide all text */
         $('#details [data-selection]').addClass('hidden');
+        $('#share-main-two [data-selection]').addClass('hidden');
 
         /* find text to display and show it */
         var detailsWordingSelector = $(this).attr("data-choice");
