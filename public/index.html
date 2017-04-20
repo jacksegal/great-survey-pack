@@ -271,21 +271,29 @@
         </div>
         <div class="row">
             <div class="col-md-4 col-md-offset-2 text-left">
-                <form data-bsd-form-id="20">
+                <form data-bsd-form-id="20"
+                      data-post-form-id="26" data-digi-form-id="25"
+                      data-none-form-id="27">
                     <div class="form-group">
                         <input type="text" class="form-control" name="296" id="inputFirstName"
                                placeholder="First Name *"
-                               required>
+                               required
+                               data-post-name="xxx" data-digi-name="xxx"
+                               data-none-name="xxx">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="298" id="inputLastName"
                                placeholder="Last Name *"
-                               required>
+                               required
+                               data-post-name="xxx" data-digi-name="xxx"
+                               data-none-name="xxx">
                     </div>
 
                     <div class="form-group">
                         <input type="email" class="form-control" name="294" id="inputEmail"
-                               placeholder="Email *" required>
+                               placeholder="Email *" required
+                               data-post-name="xxx" data-digi-name="xxx"
+                               data-none-name="xxx">
                     </div>
 
                     <!--<div class="form-group">
@@ -295,7 +303,9 @@
 
                     <div class="form-group">
                         <input type="text" class="form-control" name="303" id="inputPostcode"
-                               placeholder="Postcode *">
+                               placeholder="Postcode *"
+                               data-post-name="xxx" data-digi-name="xxx"
+                               data-none-name="xxx">
                     </div>
 
                     <!-- Postcode Lookup -->
@@ -313,12 +323,16 @@
                     </div>
 
                     <!-- Concat Address Lines 1 & 2 into one field -->
-                    <input id="addressLines" type="hidden" name="300" value="">
+                    <input id="addressLines" type="hidden" name="300" value=""
+                           data-post-name="xxx" data-digi-name="xxx"
+                           data-none-name="xxx">
 
                     <div class="form-group">
                         <input type="text" class="form-control lookupFields" name="302" id="post_town"
                                placeholder="Town *"
-                               data-selection="post" class="hidden">
+                               data-selection="post" class="hidden"
+                               data-post-name="xxx" data-digi-name="xxx"
+                               data-none-name="xxx">
                     </div>
                     <!-- // Postcode Lookup -->
 
@@ -341,7 +355,9 @@
                     <!-- Privacy - Partners -->
                     <div id="privacyCheckboxPartners" class="checkbox privacyCheckbox text-left">
                         <label>
-                            <input type="checkbox" name="358" value="1" checked>The Big Lunch may be in touch about
+                            <input type="checkbox" name="358"
+                                   data-post-name="xxx" data-digi-name="xxx"
+                                   data-none-name="xxx" value="1" checked>The Big Lunch may be in touch about
                             other similar campaigns.
                             Untick if you don’t want to receive any communications from them.
                         </label>
@@ -355,7 +371,9 @@
                         Policy</a>.
                     </p>
                     <input id="unsub" type="hidden" value="" name="">
-                    <input id="packType" type="hidden" value="post" name="359">
+                    <input id="packType" type="hidden" value="post" name="359"
+                           data-post-name="xxx" data-digi-name="xxx"
+                           data-none-name="xxx">
 
                     <button type="submit" data-href="#who-with" class="btn-lg btn btn-next">NEXT</button>
                 </form>
@@ -573,6 +591,13 @@
                                 <input type="radio" data-href="#other-closest" name="357"
                                        id="attendWhatTypeRadio3" value="an afternoon tea or a BBQ">
                                 An afternoon tea or a BBQ
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" data-href="#other-closest" name="357"
+                                       id="attendWhatTypeRadio8" value="a Big Iftar or lunar lunch">
+                                A Big Iftar or lunar lunch
                             </label>
                         </div>
                         <div class="radio">
