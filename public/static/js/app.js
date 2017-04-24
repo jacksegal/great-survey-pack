@@ -1,3 +1,12 @@
+/* Get Source Code for BSD */
+var sourceCode = getParameterByName('source');
+var subSourceCode = getParameterByName('subsource');
+$(function () {
+    $(".source").val(sourceCode);
+    $(".subsource").val(subSourceCode);
+});
+
+
 /* Submit form and trigger slide submit */
 $(function () {
     $("form").submit(function (event) {
@@ -31,8 +40,8 @@ $(function () {
             var bsdFormId = $(this).attr("data-bsd-form-id");
 
             if (bsdFormId) {
-                submitBsdForm(bsdFormId);
-                fbq('track', 'CompleteRegistration');
+                //submitBsdForm(bsdFormId);
+                //fbq('track', 'CompleteRegistration');
             }
 
             $("#formErrorAlert ul").empty();
@@ -190,6 +199,17 @@ function formatPostcode(postcode) {
     } else {
         return postcode;
     }
+}
+
+/* Get URL Parameter */
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
 /* Add signs */
