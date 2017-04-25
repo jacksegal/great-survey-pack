@@ -40,8 +40,8 @@ $(function () {
             var bsdFormId = $(this).attr("data-bsd-form-id");
 
             if (bsdFormId) {
-                //submitBsdForm(bsdFormId);
-                //fbq('track', 'CompleteRegistration');
+                submitBsdForm(bsdFormId);
+                fbq('track', 'CompleteRegistration');
             }
 
             $("#formErrorAlert ul").empty();
