@@ -29,6 +29,9 @@ $(function () {
             //$(previousSlide).addClass('visibilityHidden');
         });
 
+        /* update URL */
+        updateURL(target);
+
     });
 
 

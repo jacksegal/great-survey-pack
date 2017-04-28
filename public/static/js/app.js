@@ -6,6 +6,8 @@ $(function () {
     $(".subsource").val(subSourceCode);
 });
 
+/* Default URL */
+updateURL("join-in");
 
 /* Submit form and trigger slide submit */
 $(function () {
@@ -96,7 +98,7 @@ $(function () {
 
         /* hide all text */
         $('#details [data-selection]').addClass('hidden');
-        $('#share-main-two [data-selection]').addClass('hidden');
+        $('#thank-you [data-selection]').addClass('hidden');
 
         /* find text to display and show it */
         var detailsWordingSelector = $(this).attr("data-choice");
@@ -210,6 +212,19 @@ function getParameterByName(name, url) {
     if (!results) return null;
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+/* Update URL if using modern browser */
+function updateURL(url) {
+    if (typeof history.replaceState != 'undefined') {
+        var currentState = history.state;
+        window.history.replaceState(currentState, "", removeHash(url));
+    }
+}
+
+/* Remove Hash (#) from String */
+function removeHash(str) {
+    return str.replace(/^#/, "");
 }
 
 /* Add signs */
