@@ -247,38 +247,28 @@ $(function () {
 
 /* Do Signup Counter */
 $(function () {
+
+    /* Harcoded Numbers - Big Lunch & Mailchimp Import */
     var signupCount = (4225 + 5391);
 
+    /* Get numbers from Form 20 */
     $.ajax({
         type: "GET",
         url: 'https://secure.jocoxfoundation.org/utils/cons_counter/signup_counter.ajax.php?signup_form_id=20',
         dataType: "json",
         success: function (response) {
-
             signupCount += response;
+
+            /* Get numbers from Form 7 */
             $.ajax({
                 type: "GET",
                 url: 'https://secure.jocoxfoundation.org/utils/cons_counter/signup_counter.ajax.php?signup_form_id=7',
                 dataType: "json",
                 success: function (response) {
                     signupCount += response;
-                    $('span#signupCount').text(signupCount);
-                    $('span#signupCount').each(function () {
-                        $(this).prop('Counter', 0).animate({
-                            Counter: $(this).text()
-                        }, {
-                            duration: 2000,
-                            easing: 'swing',
-                            step: function (now) {
-                                $(this).text(Math.ceil(now));
-                            },
-                            complete: function () {
-                                $('span#signupCount').text(numberWithCommas(signupCount));
-                            }
-                        });
-                    });
 
-
+                    /* Update the Ticker */
+                    ticker(signupCount, 'span#signupCount');
                 }
             });
 
@@ -287,5 +277,29 @@ $(function () {
 
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function ticker(n, identifier) {
+
+        /* Update the value */
+        $(identifier).text(signupCount);
+
+        /* Perform animation */
+        $(identifier).each(function () {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                },
+
+                /* Add comma */
+                complete: function () {
+                    $(identifier).text(numberWithCommas(n));
+                }
+            });
+        });
     }
 });

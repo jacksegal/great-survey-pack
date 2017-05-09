@@ -164,9 +164,10 @@ a.socialIcons { /* or whatever your class */
 
 .nav-bar .nav-links a {
     text-decoration: none;
-    font-weight: bold;
-    margin: 2em;
-    font-size: 20px;
+    /*font-weight: bold;*/
+    /*margin: 2em;*/
+    padding: 5px 20px;
+    font-size: 22px;
     color: black;
 }
 
