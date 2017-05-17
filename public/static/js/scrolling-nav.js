@@ -32,6 +32,12 @@ $(function () {
         /* update URL */
         updateURL(target);
 
+        /* Google Tag Manager - Update dataLayer - Virtual Page Load */
+        dataLayer.push({
+            'event': 'virtualPageLoad',
+            'virtualPagePath': removeHash(target)
+        });
+
     });
 
 
